@@ -12,13 +12,24 @@ ansarry.splice(0,3);
 switch (command){
     case "concert-this":
         //code to look through bands in town
-
+        var query = ansarry.join(" ");
+        axios.request("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
+            function(response){
+                let date = moment(response.data[0].datetime).format("MM-DD-YYYY");
+                console.log("-------------------------------------------------------------- \n"
+                    + "Name of Venue: " + response.data[0].venue.name + "\n"
+                    + "Venue Location: " + response.data[0].venue.city + "\n"
+                    + "Date of Event: " + date + "\n"
+                    + "--------------------------------------------------------------"
+                );
+            }
+        )
         break;
 
     case "spotify-this-song":
         //code to search spotify
         var spotify = new Spotify(keys.spotify);
-        var query = ansarry.join("%20");
+        var query = ansarry.join(" ");
         spotify.search({ type: 'track', query: query }, function(err, data) {
             if (err) {
               return console.log('Error occurred: ' + err);
@@ -30,12 +41,13 @@ switch (command){
     case "movie-this":
         //code to search OMDB
         var query = ansarry.join("+");
-        console.log(query);
+        //if nothing was entered.
         if (query === ""){
             axios.request("http://www.omdbapi.com/?t=mr.nobody&y=&plot=short&apikey=trilogy")
             .then(
                 function(response) {
-                    console.log("Movie Title: "+ response.data.Title +"\n" 
+                    console.log( "-------------------------------------------------------------- \n"
+                    + "Movie Title: "+ response.data.Title +"\n" 
                     + "Year Relaeased: " + response.data.Year + "\n"
                     + "IMBD Rating: " + response.data.imdbRating + "\n"
                     + "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n"
@@ -47,11 +59,12 @@ switch (command){
                     ); 
                 }
             )
-        }else{
+        }else{ //if there was any entry
             axios.request("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy")
             .then(
                 function(response) {
-                    console.log("Movie Title: "+ response.data.Title +"\n" 
+                    console.log("-------------------------------------------------------------- \n"
+                    + "Movie Title: "+ response.data.Title +"\n" 
                     + "Year Relaeased: " + response.data.Year + "\n"
                     + "IMBD Rating: " + response.data.imdbRating + "\n"
                     + "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\n"
