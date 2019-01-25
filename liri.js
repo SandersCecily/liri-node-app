@@ -24,12 +24,14 @@ function processData (command, input){
             axios.request("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
                 function(response){
                     let date = moment(response.data[0].datetime).format("MM-DD-YYYY");
-                    console.log("-------------------------------------------------------------- \n"
+                    let output = ("-------------------------------------------------------------- \n"
                         + "Name of Venue: " + response.data[0].venue.name + "\n"
                         + "Venue Location: " + response.data[0].venue.city + "\n"
                         + "Date of Event: " + date + "\n"
                         + "--------------------------------------------------------------"
                     );
+                    console.log(output);
+                    logOutput(output);
                 }
             )
             break;
@@ -49,12 +51,14 @@ function processData (command, input){
                       return console.log('Error occurred: ' + err);
                     }
                   
-                console.log("-------------------------------------------------------------- \n"
+                let output = ("-------------------------------------------------------------- \n"
                         + "Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n"
                         + "From Abulm: " + data.tracks.items[0].album.name + "\n"
                         + "Preview Link: " + data.tracks.items[0].href + "\n"
                         + "--------------------------------------------------------------"
                     );
+                    console.log(output);
+                    logOutput(output);
                 });
             }else{ //if song is entered...
                 spotify.search({type:"track", query: query}, function(err, data) {
@@ -62,12 +66,14 @@ function processData (command, input){
                       return console.log('Error occurred: ' + err);
                     }
                   
-                console.log("-------------------------------------------------------------- \n"
+                let output = ("-------------------------------------------------------------- \n"
                         + "Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n"
                         + "From Abulm: " + data.tracks.items[0].album.name + "\n"
                         + "Preview Link: " + data.tracks.items[0].href + "\n"
                         + "--------------------------------------------------------------"
                     );
+                    console.log(output);
+                    logOutput(output);
                 });
             }
             break;
@@ -80,7 +86,7 @@ function processData (command, input){
                 axios.request("http://www.omdbapi.com/?t=mr.nobody&y=&plot=short&apikey=trilogy")
                 .then(
                     function(response) {
-                        console.log( "-------------------------------------------------------------- \n"
+                        let output = ( "-------------------------------------------------------------- \n"
                         + "Movie Title: "+ response.data.Title +"\n" 
                         + "Year Relaeased: " + response.data.Year + "\n"
                         + "IMBD Rating: " + response.data.imdbRating + "\n"
@@ -90,14 +96,16 @@ function processData (command, input){
                         + "Plot of the Movie: " + response.data.Plot + "\n"
                         + "Actors in the Movie: " + response.data.Actors + "\n"
                         + "--------------------------------------------------------------"
-                        ); 
+                        );
+                        console.log(output);
+                        logOutput(output); 
                     }
                 )
             }else{ //if there was any entry
                 axios.request("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy")
                 .then(
                     function(response) {
-                        console.log("-------------------------------------------------------------- \n"
+                        let output = ("-------------------------------------------------------------- \n"
                         + "Movie Title: "+ response.data.Title +"\n" 
                         + "Year Relaeased: " + response.data.Year + "\n"
                         + "IMBD Rating: " + response.data.imdbRating + "\n"
@@ -108,6 +116,8 @@ function processData (command, input){
                         + "Actors in the Movie: " + response.data.Actors + "\n"
                         + "--------------------------------------------------------------"
                         ); 
+                        console.log(output);
+                        logOutput(output);
                     }
                     );
                 }
@@ -129,6 +139,16 @@ function processData (command, input){
     }
 }
 
-function logOutput (){
+function logOutput (output){
+    fs.appendFile("log.txt", output, function(err) {
 
+        // If an error was experienced we will log it.
+        if (err) {
+          console.log(err);
+        }
+      
+        else {
+          console.log("Your output was logged.");
+        }
+    });
 }

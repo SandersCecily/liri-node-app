@@ -1,0 +1,31 @@
+-------------------------------------------------------------- 
+Movie Title: Moana
+Year Relaeased: 2016
+IMBD Rating: 7.6
+Rotten Tomatoes Rating: 95%
+Country Produced: USA
+Language: English
+Plot of the Movie: In Ancient Polynesia, when a terrible curse incurred by the Demigod Maui reaches Moana's island, she answers the Ocean's call to seek out the Demigod to set things right.
+Actors in the Movie: Auli'i Cravalho, Dwayne Johnson, Rachel House, Temuera Morrison
+---------------------------------------------------------------------------------------------------------------------------- 
+Movie Title: Mr. Nobody
+Year Relaeased: 2009
+IMBD Rating: 7.9
+Rotten Tomatoes Rating: 67%
+Country Produced: Belgium, Germany, Canada, France, USA, UK
+Language: English, Mohawk
+Plot of the Movie: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Actors in the Movie: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+---------------------------------------------------------------------------------------------------------------------------- 
+Artist Name: Various Artists
+From Abulm: Spider-Man: Into the Spider-Verse (Soundtrack From & Inspired by the Motion Picture)
+Preview Link: https://api.spotify.com/v1/tracks/3vWzyGTu6Ovo1GdrcJqH6e
+---------------------------------------------------------------------------------------------------------------------------- 
+Artist Name: Aminé
+From Abulm: ONEPOINTFIVE
+Preview Link: https://api.spotify.com/v1/tracks/2qpX5WY7A7uLLLQfFpvRDK
+---------------------------------------------------------------------------------------------------------------------------- 
+Name of Venue: Parkteatret
+Venue Location: Oslo
+Date of Event: 01-30-2019
+--------------------------------------------------------------
