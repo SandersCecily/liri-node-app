@@ -140,11 +140,11 @@ function processData (command, input){
 }
 
 function logOutput (output){
-    fs.appendFile("log.txt", output, function(err) {
+    fs.appendFile("log.txt", output, function(error) {
 
         // If an error was experienced we will log it.
-        if (err) {
-          console.log(err);
+        if (error) {
+          console.log(error);
         }
       
         else {
