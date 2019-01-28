@@ -31,6 +31,10 @@ node liri.js do-what-it-says
 
 Lastly this command reads the random.txt file in the same directory to get user input as to know which command to follow. Its like a roulette if you didn't look into it or edit it. This file only has one line so it only grabs from that one piece of data as the first and in this case only thing entered.
 
+
+[![Youtube video demo](http://img.youtube.com/vi/e7BP1sf-Ry4&feature=youtu.be/0.jpg)](http://www.youtube.com/watch?v=e7BP1sf-Ry4&feature=youtu.be)
+
+
 ## Required packages
 * .env
 * axios
