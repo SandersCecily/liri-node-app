@@ -53,7 +53,7 @@ function processData (command, input){
                   
                 let output = ("-------------------------------------------------------------- \n"
                         + "Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n"
-                        + "From Abulm: " + data.tracks.items[0].album.name + "\n"
+                        + "From Album: " + data.tracks.items[0].album.name + "\n"
                         + "Preview Link: " + data.tracks.items[0].href + "\n"
                         + "--------------------------------------------------------------"
                     );
@@ -68,7 +68,7 @@ function processData (command, input){
                   
                 let output = ("-------------------------------------------------------------- \n"
                         + "Artist Name: " + data.tracks.items[0].album.artists[0].name + "\n"
-                        + "From Abulm: " + data.tracks.items[0].album.name + "\n"
+                        + "From Album: " + data.tracks.items[0].album.name + "\n"
                         + "Preview Link: " + data.tracks.items[0].href + "\n"
                         + "--------------------------------------------------------------"
                     );
